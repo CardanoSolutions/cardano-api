@@ -940,10 +940,7 @@ fromConsensusQueryResultShelleyBased sbe sbeQuery q' r' =
           SerialisedPoolDistribution r'
         _ -> fromConsensusQueryResultMismatch
     QueryStakeSnapshot{} ->
-      case q' of
-        Consensus.GetCBOR Consensus.GetStakeSnapshots{} ->
-          SerialisedStakeSnapshots r'
-        _ -> fromConsensusQueryResultMismatch
+      error "not implemented"
     QueryStakeDelegDeposits{} ->
       case q' of
         Consensus.GetStakeDelegDeposits{} ->
